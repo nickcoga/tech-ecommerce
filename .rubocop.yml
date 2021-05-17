@@ -60,6 +60,7 @@ Layout/LineLength:
   IgnoredPatterns: ['\s*#']
 
 Metrics/BlockLength:
+  Max: 50
   Exclude:
     - config/**/*
     - spec/**/*
