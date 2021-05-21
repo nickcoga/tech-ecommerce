@@ -29,10 +29,12 @@ rails g model Invoice user:references order:references user_address:references i
 
 Controllers without helpers nor assets
 
-rails g controller Stores show create update destroy --no-helper --no-assets --no-template-engine
+rails g controller Stores index show create update destroy --no-helper --no-assets --no-template-engine
 
-rails g controller Offers show create update destroy --no-helper --no-assets --no-template-engine
+rails g controller Offers index show create update destroy --no-helper --no-assets --no-template-engine
 
 rails g controller Categories index show create update destroy --no-helper --no-assets --no-template-engine
 
 rails g controller Products index show create update destroy --no-helper --no-assets --no-template-engine
+
+rails g controller Orders index show create update destroy --no-helper --no-assets --no-template-engine
