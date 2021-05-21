@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :stores, only: %i[index show create update destroy]
   resources :offers, only: %i[index show create update destroy]
   resources :categories, only: %i[index show create update destroy]
+  resources :products, only: %i[index show create update destroy]
 end
