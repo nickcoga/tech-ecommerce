@@ -1,3 +1,7 @@
+rails new tech-ecommerce -d=postgresql -T --skip-coffee
+
+---
+
 rails g model Store address url_address annex:integer status:integer
 
 rails g model Category name status:integer
