@@ -42,3 +42,7 @@ rails g controller Categories index show create update destroy --no-helper --no-
 rails g controller Products index show create update destroy --no-helper --no-assets --no-template-engine
 
 rails g controller Orders index show create update destroy --no-helper --no-assets --no-template-engine
+
+rails g controller Users index show create update destroy --no-helper --no-assets --no-template-engine
+
+rails g controller UserAddresses index show create update destroy --no-helper --no-assets --no-template-engine

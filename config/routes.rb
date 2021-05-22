@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   resources :categories, only: %i[index show create update destroy]
   resources :products, only: %i[index show create update destroy]
   resources :orders, only: %i[index show create update destroy]
-  resources :users, only: %i[index show create update destroy]
+  resources :users, only: %i[index show create update destroy] do
+    resources :addresses, only: %i[index show create update destroy]
+  end
+  # resources :user_addresses, only: %i[index show create update destroy]
 end
