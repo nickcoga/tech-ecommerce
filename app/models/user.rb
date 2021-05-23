@@ -5,7 +5,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true,
                     format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/ }
   validates :password, length: { minimum: 6 }, allow_nil: true
-  validates :user_address, presence: true
 
   has_many :user_addresses, dependent: :destroy
   has_many :order, dependent: :destroy
@@ -38,5 +37,6 @@ end
 #
 # Indexes
 #
+#  index_users_on_email  (email) UNIQUE
 #  index_users_on_token  (token) UNIQUE
 #

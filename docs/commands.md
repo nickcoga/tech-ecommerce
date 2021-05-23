@@ -1,3 +1,7 @@
+rails new tech-ecommerce -d=postgresql -T --skip-coffee
+
+---
+
 rails g model Store address url_address annex:integer status:integer
 
 rails g model Category name status:integer
@@ -24,3 +28,23 @@ rails g migration AddEmailIndexToUser # this model should have been plural
 rails g model OrderProduct order:references product:references quantity:integer unit_price:decimal{7-2} discount:decimal{5-2}
 
 rails g model Invoice user:references order:references user_address:references invoice_number:integer sub_total:decimal{7-2} igv:decimal{5-2} net_total:decimal{7-2} status:integer ruc:integer # TODO: should we have net_total here? can we use something else instead of dependent: :destroy? if not, should user_address be copied here? (for auditions)
+
+---
+
+Controllers without helpers nor assets
+
+rails g controller Stores index show create update destroy --no-helper --no-assets --no-template-engine
+
+rails g controller Offers index show create update destroy --no-helper --no-assets --no-template-engine
+
+rails g controller Categories index show create update destroy --no-helper --no-assets --no-template-engine
+
+rails g controller Products index show create update destroy --no-helper --no-assets --no-template-engine
+
+rails g controller Orders index show create update destroy --no-helper --no-assets --no-template-engine
+
+rails g controller Users index show create update destroy --no-helper --no-assets --no-template-engine
+
+rails g controller UserAddresses index show create update destroy --no-helper --no-assets --no-template-engine
+
+rails g controller Invoices index show create update destroy --no-helper --no-assets --no-template-engine
