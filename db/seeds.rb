@@ -10,15 +10,17 @@
 
 if Rails.env.development?
   puts "Deleting current data"
-  Store.destroy_all
-  Category.destroy_all
-  Product.destroy_all
+  # TODO: fix destroy_all order or search how to delete all records from all tables in one command
   ProductStore.destroy_all
-  Offer.destroy_all
-  User.destroy_all
-  UserAddress.destroy_all
-  Order.destroy_all
   OrderProduct.destroy_all
+  Product.destroy_all
+  Offer.destroy_all
+  Category.destroy_all
+  Order.destroy_all
+  Invoice.destroy_all
+  UserAddress.destroy_all
+  User.destroy_all
+  Store.destroy_all
 
   puts "Start seeding"
 
@@ -89,9 +91,13 @@ if Rails.env.development?
 
   quantity_order_2_1 = 2
 
-  order1_1 = Order.create!(user: user1, user_address: address1_1, total_price: unit_price_1_1 * (discount1/100) + unit_price_3_1, paid_at: nil, status: order_status_pending)
+  total_price_1_1 = unit_price_1_1 * (discount1/100) + unit_price_3_1
+  total_price_2_1 = quantity_order_2_1 * unit_price_1_3
+
+  order1_1 = Order.create!(user: user1, user_address: address1_1, total_price: total_price_1_1, paid_at: nil, status: order_status_pending)
   order1_2 = Order.create!(user: user1, user_address: address1_2, total_price: unit_price_1_4, paid_at: 3.days.ago, status: order_status_paid)
-  order2_1 = Order.create!(user: user2, user_address: address2_1, total_price: quantity_order_2_1 * unit_price_1_3, paid_at: 5.days.ago, status: order_status_completed)
+
+  order2_1 = Order.create!(user: user2, user_address: address2_1, total_price: total_price_2_1, paid_at: 5.days.ago, status: order_status_completed)
 
   puts "creating order_products"
   OrderProduct.create!(order: order1_1, product: product_1_1, quantity: 1, unit_price: unit_price_1_1, discount: discount1)
@@ -100,6 +106,13 @@ if Rails.env.development?
   OrderProduct.create!(order: order1_2, product: product_1_4, quantity: 1, unit_price: unit_price_1_4, discount: 0)
 
   OrderProduct.create!(order: order1_2, product: product_1_3, quantity: quantity_order_2_1, unit_price: unit_price_1_3, discount: 0)
+
+  puts "creating invoices"
+  invoice_status_paid = 2
+  igv = 18
+  subtotal = total_price_1_1 * (1 - igv/100.to_f)
+
+  Invoice.create!(igv: igv, invoice_number: 1, net_total: total_price_2_1, ruc: 1081818181, status: invoice_status_paid, sub_total: subtotal, order: order2_1, user_address: address2_1, user: user2)
 
   puts "Finish seeding"
 else
