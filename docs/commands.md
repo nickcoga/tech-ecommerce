@@ -46,3 +46,5 @@ rails g controller Orders index show create update destroy --no-helper --no-asse
 rails g controller Users index show create update destroy --no-helper --no-assets --no-template-engine
 
 rails g controller UserAddresses index show create update destroy --no-helper --no-assets --no-template-engine
+
+rails g controller Invoices index show create update destroy --no-helper --no-assets --no-template-engine

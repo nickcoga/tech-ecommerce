@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :orders, only: %i[index show create update destroy]
   resources :users, only: %i[index show create update destroy] do
     resources :addresses, only: %i[index show create update destroy]
+    resources :invoices, only: %i[index show create update destroy]
   end
+  # resources :invoices, only: %i[index show create update destroy] # TODO: is this route necessary for metrics?
   # resources :user_addresses, only: %i[index show create update destroy]
 end
