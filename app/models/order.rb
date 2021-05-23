@@ -3,6 +3,8 @@ class Order < ApplicationRecord
   belongs_to :user_address
   has_many :order_products, dependent: :destroy
   has_one :invoices, dependent: :destroy
+
+  # TODO: validate and reject if user related doesn't have address nor payment method related.
 end
 
 # == Schema Information
