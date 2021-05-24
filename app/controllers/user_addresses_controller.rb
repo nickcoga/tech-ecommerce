@@ -1,6 +1,7 @@
 class UserAddressesController < ApplicationController
   def index
     @user_addresses = UserAddress.all
+    render json :@user_addresses
   end
 
   def show
