@@ -48,3 +48,25 @@ rails g controller Users index show create update destroy --no-helper --no-asset
 rails g controller UserAddresses index show create update destroy --no-helper --no-assets --no-template-engine
 
 rails g controller Invoices index show create update destroy --no-helper --no-assets --no-template-engine
+
+---
+
+REACT:
+
+npx create-react-app front
+
+setup front
+
+yarn add react-router-doom
+
+---
+
+RAILS:
+
+Add gem
+
+gem 'rack-cors'
+
+bundle install
+
+gem install rack-cors
