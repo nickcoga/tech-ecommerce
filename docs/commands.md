@@ -116,7 +116,7 @@ setup tailwindcss
     https://cln.sh/twNRAr
     import './styles/app.css'
 
-  change the default CRA scripts to build css
+  change the default CRA scripts to build css in package.json
     "scripts": {
       "start": "react-scripts start",
       "build": "npm run build:css && react-scripts build",
