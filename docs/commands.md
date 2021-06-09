@@ -70,3 +70,66 @@ gem 'rack-cors'
 bundle install
 
 gem install rack-cors
+
+-----
+
+setup tailwindcss
+
+  if you have problems with CRA with preflight check, create an .env file with
+    SKIP_PREFLIGHT_CHECK=true
+
+  install tailwind for dev dependencies (v1 to avoid issues)
+    yarn add tailwindcss@^1.9.6 -D
+
+  initialize the configuration 
+    npx tailwind init tailwind.config.js -full # creates the tailwind config file with all the available options (around 1000 lines)
+    # the config name can also be tailwind.js or whatever you want
+
+  install postcss-cli and autoprefixer (?)
+    # for tailwind v1 with create-react-app
+    yarn add postcss-cli@^6.1.3 autoprefixer@^9.8.6 -D # what is postcss and autoprefixer for (?)
+
+    # for tailwind 2 with CRA: https://tailwindcss.com/docs/guides/create-react-app#install-tailwind-via-npm # didn't work (postcss not found)
+    yarn add -D @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
+
+  create postcss file
+    touch postcss.config.js
+
+  set this into the postcss.config.js
+    const tailwindcss = require('tailwindcss');
+
+    module.exports = {
+      plugins: [
+        tailwindcss('./tailwind.config.js'), // tailwind config
+        require('autoprefixer') // ????
+      ] 
+    }
+
+  create folder styles and an app.css file and a tailwind.css file
+
+    tailwind.css
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+  import the compiled app.css in the app.js (or the most important ocmponent)
+    https://cln.sh/twNRAr
+    import './styles/app.css'
+
+  change the default CRA scripts to build css
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "npm run build:css && react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject",
+      "build:css": "postcss src/styles/tailwind.css -o src/styles/app.css",
+      "watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css -w"
+    },
+
+  build the app.css
+    yarn run build:css
+
+  run the app and test the tailwind classes
+    yarn start
+
+
