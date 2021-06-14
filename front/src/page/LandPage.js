@@ -17,7 +17,7 @@ export default function LandPage() {
 
   return (
     <Fragment>
-      <div>Hola soy LandPage</div>
+      <div className="text-red-300">Hola soy LandPage</div>
     </Fragment>
   );
 }
