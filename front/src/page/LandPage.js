@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import UserService from "../services/users_service";
+import Header from '../shared/Header'
 
 export default function LandPage() {
   React.useEffect(() => {
@@ -17,7 +18,7 @@ export default function LandPage() {
 
   return (
     <Fragment>
-      <div className="text-red-300">Hola soy LandPage</div>
+      <Header />
     </Fragment>
   );
 }
