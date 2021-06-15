@@ -2,9 +2,11 @@ import React from "react";
 import Icons from "./UI/Icons";
 import FlexContainer from "./UI/FlexContainer";
 
-export default function Search({ placeholder }) {
+export default function Search({ placeholder, className = "" }) {
   return (
-    <FlexContainer className="items-center border border-black rounded-lg p-1 w-full justify-between">
+    <FlexContainer
+      className={`items-center border border-black rounded-lg p-1 w-full justify-between ${className}`}
+    >
       <input
         type="text"
         placeholder={placeholder}
