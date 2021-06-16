@@ -2,6 +2,7 @@
   display: none;
   flex: 1;
   height: 25vh;
+  object-fit: cover;
 }
 
 .styled_container .active {
