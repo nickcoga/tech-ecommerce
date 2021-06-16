@@ -732,6 +732,13 @@ module.exports = {
         "20vw": "20vw",
         "25vw": "25vw",
       },
+      maxWidth: {
+        "70vw": "70vw",
+        "75vw": "75vw",
+        "80vw": "80vw",
+        "85vw": "85vw",
+        "90vw": "90vw",
+      },
     },
   },
   variants: {
