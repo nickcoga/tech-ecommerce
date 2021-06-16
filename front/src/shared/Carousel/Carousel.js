@@ -3,11 +3,11 @@ import Icons from "../UI/Icons";
 import "../Carousel/styles.css";
 
 const images = [
-  "https://dynamic-yield.linio.com//api/scripts/8767678/images/1b62f8e67f6c9__CMR-Days_BBE5_onsite.jpg",
-  "https://i.linio.com/cms/698b8718-ccd9-11eb-812f-ee2255d3cf9f.webp",
-  "https://dynamic-yield.linio.com//api/scripts/8767678/images/368ecd12a3404__CMR-Days_BBE2_onsite.jpg",
-  "https://dynamic-yield.linio.com//api/scripts/8767678/images/1a38e144de142__CMR-Days_BBE3_onsite.jpg",
-]; // TODO: change these
+  "https://placeimg.com/1403/325/tech",
+  "https://placeimg.com/1403/325/nature",
+  "https://placeimg.com/1403/325/people",
+  "https://placeimg.com/1403/325/animals",
+];
 
 function Carousel({ photos = images }) {
   const [photosList, setPhotosList] = useState(photos);
@@ -33,7 +33,7 @@ function Carousel({ photos = images }) {
           className={index === 1 ? "active" : ""}
           key={index}
           src={image}
-          alt={`Carousel Image ${index}`}
+          alt={`Carousel ${index}`}
         />
       ))}
       <div className="styled_container_icon right">
