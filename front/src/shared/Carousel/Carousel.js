@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useInterval from "../../helpers/useInterval";
 import Icons from "../UI/Icons";
 import "../Carousel/styles.css";
 
@@ -10,29 +11,32 @@ const images = [
 ];
 
 function Carousel({ photos = images }) {
-  const [photosList, setPhotosList] = useState(photos);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const previousPhoto = () => {
-    setPhotosList([
-      photosList[photosList.length - 1],
-      ...photosList.splice(0, photosList.length - 1),
-    ]);
+    const isFirstIndexActive = activeIndex === 0;
+    setActiveIndex(isFirstIndexActive ? photos.length - 1 : activeIndex - 1)
   };
 
   const nextPhoto = () => {
-    setPhotosList([...photosList.splice(1), photosList[0]]);
+    const isLastIndexActive = activeIndex === photos.length - 1;
+    setActiveIndex(isLastIndexActive ? 0 : activeIndex + 1);
   };
+
+  useInterval(() => {
+    nextPhoto()
+  }, 5000)
 
   return (
     <div className="styled_container">
       <div className="styled_container_icon left">
         <Icons className="prev" onClick={previousPhoto} type="previous" />
       </div>
-      {photosList.map((image, index) => (
+      {photos.map((image, index) => (
         <img
-          className={index === 1 ? "active" : ""}
           key={index}
           src={image}
+          className={index === activeIndex ? 'active' : ''}
           alt={`Carousel ${index}`}
         />
       ))}
