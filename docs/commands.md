@@ -159,4 +159,12 @@ configuring/extending tailwindcss
 
   you will probably need to run your script that recompiles your css that is does something like this:
     postcss src/styles/tailwind.css -o src/styles/app.css
-  
+
+where to get placeholder images
+
+  https://loremipsum.io/21-of-the-best-placeholder-image-generators/
+
+custom hooks used
+
+  useInterval from https://overreacted.io/making-setinterval-declarative-with-react-hooks/
+
