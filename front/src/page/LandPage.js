@@ -2,7 +2,7 @@ import React from "react";
 import UserService from "../services/users_service";
 import Banner from "../shared/Banner";
 import Header from "../shared/Header";
-// import ImageSlider from "../shared/ImageSlider";
+import ImageSlider from "../shared/ImageSlider/ImageSlider";
 import MainContainer from "../shared/UI/MainContainer";
 import SectionContainer from "../shared/UI/SectionContainer";
 
@@ -25,7 +25,7 @@ export default function LandPage() {
       <Header />
       <SectionContainer>
         <Banner />
-        {/* <ImageSlider /> */}
+        <ImageSlider />
       </SectionContainer>
     </MainContainer>
   );
