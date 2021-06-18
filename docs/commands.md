@@ -157,8 +157,8 @@ configuring/extending tailwindcss
       },
     }
 
-  you will probably need to run your script that recompiles your css that is does something like this:
-    postcss src/styles/tailwind.css -o src/styles/app.css
+  you will probably need to run your script to compile again your css:
+    postcss src/styles/tailwind.css -o src/styles/app.css  - OR - yarn run build:css # from your package.json
 
 where to get placeholder images
 
