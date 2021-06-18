@@ -13,9 +13,9 @@ const Offer = (
 
 export default function Banner() {
   return (
-    <div className="mx-2 lg:max-w-80vw lg:mx-auto">
+    <>
       {Offer}
       <Carousel />
-    </div>
+    </>
   );
 }
