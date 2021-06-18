@@ -7,6 +7,8 @@ import {
   FaUserCircle,
   FaReact,
   FaTimes,
+  FaChevronLeft,
+  FaChevronRight,
 } from "react-icons/fa";
 
 const iconSet = {
@@ -16,6 +18,8 @@ const iconSet = {
   user: FaUserCircle,
   react: FaReact,
   clear: FaTimes,
+  previous: FaChevronLeft,
+  next: FaChevronRight,
 };
 
 const Icons = ({ type, color, className, onClick }) => {

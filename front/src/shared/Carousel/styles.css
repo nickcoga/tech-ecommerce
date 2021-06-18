@@ -1,0 +1,75 @@
+.styled_container > img {
+  display: none;
+  flex: 1;
+  height: 12rem;
+  object-fit: cover;
+}
+
+.styled_container .active {
+  display: block;
+}
+
+.styled_container > svg {
+  cursor: pointer;
+}
+
+.styled_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-content: center;
+  margin: 0 auto;
+}
+
+.styled_container_icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.styled_container_icon.left {
+  left: 5px;
+}
+
+.styled_container_icon.right {
+  right: 5px;
+}
+
+.styled_container_icon > .prev,
+.styled_container_icon > .next {
+  transform: translateX(0px);
+  transition: all 500ms ease-in-out;
+}
+
+.styled_container_icon:hover {
+  cursor: pointer;
+  background-color: lightgray;
+  opacity: 0.4;
+}
+.styled_container_icon > .prev:hover {
+  transform: translateX(-3px);
+}
+
+.styled_container_icon > .next:hover {
+  transform: translateX(3px);
+}
+
+@media screen and (min-width: 1024px) {
+  .styled_container > img {
+    height: 20rem;
+  }
+
+  .styled_container_icon.left {
+    left: 50px;
+  }
+
+  .styled_container_icon.right {
+    right: 50px;
+  }
+}

@@ -132,4 +132,39 @@ setup tailwindcss
   run the app and test the tailwind classes
     yarn start
 
+-----
+
+configuring/extending tailwindcss
+  add an extend property to your tailwind.config.js file at the end of the theme property
+  example:
+    theme: {
+      ...
+      extend: {
+        height: {
+          "5vh": "5vh",
+          "10vh": "10vh",
+          "15vh": "15vh",
+          "20vh": "20vh",
+          "25vh": "25vh",
+        },
+        width: {
+          "5vw": "5vw",
+          "10vw": "10vw",
+          "15vw": "15vw",
+          "20vw": "20vw",
+          "25vw": "25vw",
+        },
+      },
+    }
+
+  you will probably need to run your script to compile again your css:
+    postcss src/styles/tailwind.css -o src/styles/app.css  - OR - yarn run build:css # from your package.json
+
+where to get placeholder images
+
+  https://loremipsum.io/21-of-the-best-placeholder-image-generators/
+
+custom hooks used
+
+  useInterval from https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 
