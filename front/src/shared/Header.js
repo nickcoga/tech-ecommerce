@@ -6,7 +6,7 @@ import Search from "./Search";
 export default function Header() {
   return (
     <>
-      <FlexContainer className="px-3 pt-2 justify-between">
+      <FlexContainer className="px-1 lg:px-3 lg:pt-2 justify-between">
         <FlexContainer className="items-center gap-1">
           <Icons className="text-2xl" type="hamburguer" />
           <Icons className="text-2xl" type="react" />
@@ -21,7 +21,7 @@ export default function Header() {
           <Icons className="text-3xl" type="shoppingCart" />
         </FlexContainer>
       </FlexContainer>
-      <FlexContainer className="p-2 sm:hidden">
+      <FlexContainer className="pt-2 sm:hidden">
         <Search placeholder="Busca un producto..." />
       </FlexContainer>
     </>

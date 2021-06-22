@@ -1,7 +1,10 @@
-import React, { Fragment } from "react";
+import React from "react";
 import UserService from "../services/users_service";
 import Banner from "../shared/Banner";
 import Header from "../shared/Header";
+import ImageSlider from "../shared/ImageSlider/ImageSlider";
+import MainContainer from "../shared/UI/MainContainer";
+import SectionContainer from "../shared/UI/SectionContainer";
 
 export default function LandPage() {
   React.useEffect(() => {
@@ -18,9 +21,12 @@ export default function LandPage() {
   // }
 
   return (
-    <Fragment>
+    <MainContainer>
       <Header />
-      <Banner />
-    </Fragment>
+      <SectionContainer>
+        <Banner />
+        <ImageSlider />
+      </SectionContainer>
+    </MainContainer>
   );
 }
