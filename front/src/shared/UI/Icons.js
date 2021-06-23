@@ -9,6 +9,7 @@ import {
   FaTimes,
   FaChevronLeft,
   FaChevronRight,
+  FaRegCreditCard,
 } from "react-icons/fa";
 
 const iconSet = {
@@ -20,6 +21,7 @@ const iconSet = {
   clear: FaTimes,
   previous: FaChevronLeft,
   next: FaChevronRight,
+  creditCard: FaRegCreditCard,
 };
 
 const Icons = ({ type, color, className, onClick }) => {
