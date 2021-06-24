@@ -14,6 +14,7 @@ module.exports = {
         "25vh": "25vh",
       },
       width: {
+        50: "12.5rem",
         "5vw": "5vw",
         "10vw": "10vw",
         "15vw": "15vw",
@@ -30,5 +31,5 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };

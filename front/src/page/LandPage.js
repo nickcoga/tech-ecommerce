@@ -2,9 +2,10 @@ import React from "react";
 import UserService from "../services/users_service";
 import Banner from "../shared/Banner";
 import Header from "../shared/Header";
-import ImageSlider from "../shared/ImageSlider/ImageSlider";
 import MainContainer from "../shared/UI/MainContainer";
 import SectionContainer from "../shared/UI/SectionContainer";
+import Catalogue from "../shared/Catalogue";
+import Categories from "../shared/Categories";
 
 export default function LandPage() {
   React.useEffect(() => {
@@ -25,7 +26,8 @@ export default function LandPage() {
       <Header />
       <SectionContainer>
         <Banner />
-        <ImageSlider />
+        <Categories />
+        <Catalogue />
       </SectionContainer>
     </MainContainer>
   );
