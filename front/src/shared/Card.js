@@ -15,7 +15,7 @@ export default function Card({
   return (
     <div className="flex-none border border-gray-500 p-2 w-50 rounded">
       <img src={url} alt={`${altText} ${index}`}></img>
-      <p className="font-bold mt-3">{title}</p>
+      <p className="font-bold mt-3 truncate">{title}</p>
       <FlexContainer className="gap-2 items-center">
         <p className="line-through text-gray-600">S/. {originalPrice}</p>
         <p className="text-sm">-{discount}%</p>
