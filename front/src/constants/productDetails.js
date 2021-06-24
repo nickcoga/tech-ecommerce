@@ -73,7 +73,7 @@ export const productsDetails = {
     discount: 15,
   },
   product10: {
-    name: "Celular HuaOmi X30 Negro Desbloqueado Crackeado 100% real no feik",
+    name: "Celular HuaOmi X30 Negro Desbloqueado 128GB/6GB",
     link: "https://placeimg.com/199/199/tech?random=10",
     originalPrice: 1399.99,
     offerPrice: 1259.99,

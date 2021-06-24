@@ -168,3 +168,23 @@ custom hooks used
 
   useInterval from https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 
+setup a tailwind plugin
+
+  https://github.com/tailwindlabs/tailwindcss-line-clamp
+
+  install the dependency
+    yarn add @tailwindcss/line-clamp
+
+  add the plugin to the configuration file tailwind.config.js
+    module.exports = {
+      theme: {
+        // ...
+      },
+      plugins: [
+        require('@tailwindcss/line-clamp'),
+        // ...
+      ],
+    }
+
+  rebuild your app.css
+    yarn run build:css
