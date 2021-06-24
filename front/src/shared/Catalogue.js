@@ -1,26 +1,35 @@
 import ImageSlider from "./ImageSlider/ImageSlider";
-import { productsLinks } from "../constants/imageLinks";
+import { productsDetails } from "../constants/productDetails";
 import Card from "./Card";
 
 export default function Catalogue() {
-  const links = Object.entries(productsLinks);
+  const products = Object.entries(productsDetails);
+
   return (
     <ImageSlider className="gap-2">
-      {links.map(([key, url], index) => {
-        return (
-          <Card
-            key={key}
-            url={url}
-            index={index}
-            altText="Product card"
-            title="Laptop Lenovo G470"
-            originalPrice={100}
-            offerPrice={59.9}
-            specialPrice={39.9}
-            discount={40}
-          />
-        );
-      })}
+      {products.map(
+        (
+          [
+            key,
+            { name, link, originalPrice, offerPrice, specialPrice, discount },
+          ],
+          index
+        ) => {
+          return (
+            <Card
+              key={key}
+              url={link}
+              index={index}
+              altText="Product card"
+              title={name}
+              originalPrice={originalPrice}
+              offerPrice={offerPrice}
+              specialPrice={specialPrice}
+              discount={discount}
+            />
+          );
+        }
+      )}
     </ImageSlider>
   );
 }
