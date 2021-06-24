@@ -14,7 +14,6 @@ export default function Card({
 }) {
   return (
     <div className="flex-none border border-gray-500 p-2 w-50 rounded">
-      {/* lg:w-13vw */}
       <img src={url} alt={`${altText} ${index}`}></img>
       <p className="font-bold mt-3">{title}</p>
       <FlexContainer className="gap-2 items-center">
