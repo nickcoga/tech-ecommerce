@@ -5,7 +5,7 @@ import Search from "./Search";
 
 export default function Header() {
   return (
-    <div className="col-start-1 col-span-12">
+    <div className="col-start-1 col-span-4 lg:col-span-12">
       <FlexContainer className="px-1 lg:px-3 lg:pt-2 justify-between">
         <FlexContainer className="items-center gap-1">
           <Icons className="text-2xl" type="hamburguer" />
