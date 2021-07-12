@@ -10,6 +10,10 @@ import {
   FaChevronLeft,
   FaChevronRight,
   FaRegCreditCard,
+  FaFacebookSquare,
+  FaTwitterSquare,
+  FaInstagramSquare,
+  FaYoutubeSquare,
 } from "react-icons/fa";
 
 const iconSet = {
@@ -22,6 +26,10 @@ const iconSet = {
   previous: FaChevronLeft,
   next: FaChevronRight,
   creditCard: FaRegCreditCard,
+  facebook: FaFacebookSquare,
+  instagram: FaTwitterSquare,
+  twitter: FaInstagramSquare,
+  youtube: FaYoutubeSquare,
 };
 
 const Icons = ({ type, color, className, onClick }) => {
