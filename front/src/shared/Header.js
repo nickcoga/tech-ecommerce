@@ -2,6 +2,7 @@ import React from "react";
 import Icons from "./UI/Icons";
 import FlexContainer from "./UI/FlexContainer";
 import Search from "./Search";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -9,8 +10,10 @@ export default function Header() {
       <FlexContainer className="px-1 lg:px-3 lg:pt-2 justify-between">
         <FlexContainer className="items-center gap-1">
           <Icons className="text-2xl" type="hamburguer" />
-          <Icons className="text-2xl" type="react" />
-          React
+          <Link to="/" className="flex">
+            <Icons className="text-2xl" type="react" />
+            React
+          </Link>
         </FlexContainer>
         <Search
           placeholder="Busca un producto..."
@@ -18,7 +21,9 @@ export default function Header() {
         />
         <FlexContainer className="items-center gap-1">
           <Icons className="text-2xl" type="user" />
-          <Icons className="text-3xl" type="shoppingCart" />
+          <Link to="/cart">
+            <Icons className="text-3xl" type="shoppingCart" />
+          </Link>
         </FlexContainer>
       </FlexContainer>
       <FlexContainer className="pt-2 sm:hidden">
