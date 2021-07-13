@@ -2,6 +2,7 @@ import React from "react";
 import UserService from "../services/users_service";
 import Banner from "../shared/Banner";
 import Header from "../shared/Header";
+import Footer from "../shared/Footer";
 import MainContainer from "../shared/UI/MainContainer";
 import SectionContainer from "../shared/UI/SectionContainer";
 import Catalogue from "../shared/Catalogue";
@@ -29,6 +30,7 @@ export default function LandPage() {
         <Categories />
         <Catalogue />
       </SectionContainer>
+      <Footer />
     </MainContainer>
   );
 }

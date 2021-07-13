@@ -2,20 +2,14 @@ import { useState } from "react";
 import useInterval from "../../helpers/useInterval";
 import Icons from "../UI/Icons";
 import "../Carousel/styles.css";
+import { imagesCarosuel } from "../../constants/imagesCarosuel";
 
-const images = [
-  "https://placeimg.com/1403/325/tech",
-  "https://placeimg.com/1403/325/nature",
-  "https://placeimg.com/1403/325/people",
-  "https://placeimg.com/1403/325/animals",
-];
-
-function Carousel({ photos = images }) {
+function Carousel({ photos = imagesCarosuel }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const previousPhoto = () => {
     const isFirstIndexActive = activeIndex === 0;
-    setActiveIndex(isFirstIndexActive ? photos.length - 1 : activeIndex - 1)
+    setActiveIndex(isFirstIndexActive ? photos.length - 1 : activeIndex - 1);
   };
 
   const nextPhoto = () => {
@@ -24,8 +18,8 @@ function Carousel({ photos = images }) {
   };
 
   useInterval(() => {
-    nextPhoto()
-  }, 5000)
+    nextPhoto();
+  }, 5000);
 
   return (
     <div className="styled_container">
@@ -35,7 +29,7 @@ function Carousel({ photos = images }) {
       {photos.map((image, index) => (
         <img
           key={index}
-          src={image}
+          src={image.url}
           className={index === activeIndex ? 'active' : ''}
           alt={`Carousel ${index}`}
         />
@@ -48,3 +42,15 @@ function Carousel({ photos = images }) {
 }
 
 export default Carousel;
+
+
+// {photos.map((photo, index) => (
+//   <Link
+//     to={`/special-offers/:${photo.id}`}
+//     className={index === activeIndex ? "active" : ""}
+//   >
+//     <img key={photo.id} src={photo.url} alt={`Carousel ${index}`} />
+//   </Link>
+// ))}
+
+// TODO: use Link for the Carousel images

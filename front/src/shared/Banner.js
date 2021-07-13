@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "./Carousel/Carousel";
+import { Link } from "react-router-dom";
 
 const Offer = (
   <div className="mt-2 mb-2 w-full">
@@ -14,7 +15,7 @@ const Offer = (
 export default function Banner() {
   return (
     <>
-      {Offer}
+      <Link to="/partnership-discounts">{Offer} </Link>
       <Carousel />
     </>
   );
